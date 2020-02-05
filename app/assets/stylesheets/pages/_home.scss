@@ -1,1 +1,20 @@
-// Specific CSS for your home-page
+.banner h1{
+  text-align: center;
+}
+
+.banner {
+  background-image: url("https://i.pinimg.com/originals/96/ae/87/96ae8773333e4f0397462eded8af5dc8.jpg");
+  background-size: cover;
+  height: 600px;
+}
+
+.banner h2 {
+padding-top: 20px;
+ text-align: center;
+ font-style: italic;
+}
+
+.nav-link a {
+ color: blue;
+}
+
