@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   end
 
   def show
-    @dog = Dog.find(params[dog_params])
+    @dog = Dog.find(params[:id])
   end
 
   def create
