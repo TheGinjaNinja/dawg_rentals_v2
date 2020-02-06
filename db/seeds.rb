@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
 def getName
@@ -67,10 +60,23 @@ def getPostcode
   ].sample
 end
 
-puts "Creating 10 x dogs"
+User.create!(email: 'jonas.vanbuel@gmail.com', password: 'dawgrentals', password_confirmation: 'dawgrentals')
+User.create!(email: 'jamie.s.a.reynolds@gmail.com', password: 'dawgrentals', password_confirmation: 'dawgrentals')
+User.create!(email: 'hello@sophiearcher.co.uk', password: 'dawgrentals', password_confirmation: 'dawgrentals')
+User.create!(email: 'tom_poulter_02@hotmail.com', password: 'dawgrentals', password_confirmation: 'dawgrentals')
 
-10.times do
-  Dog.create(name: getName, breed: getBreed, bio: getBio, location: getPostcode, user: User.find(rand(1..4)))
+puts "Created 4 users"
+
+50.times do
+  Dog.create(
+    name: getName,
+    breed: getBreed,
+    bio: getBio,
+    location: getPostcode,
+    user: User.find(rand(1..4)),
+    img_url: "https://source.unsplash.com/800x600/?dog"
+  )
 end
 
-# Need to work out how to create Users in the Seed, rather than manually.
+puts "Created 50 dogs"
+puts "Seed completed"
