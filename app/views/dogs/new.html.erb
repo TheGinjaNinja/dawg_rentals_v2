@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Your dog's details:</h1>
+
+  <%= simple_form_for @dog, url: dogs_path, method: :post do |f| %>
+    <%= f.input :name, label: "Your dog's name" %>
+    <%= f.input :breed, label: "Select the breed", collection: Dog::CATEGORIES %>
+    <%= f.input :bio, label: "Tell us something more about your dog" %>
+    <%= f.input :location %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
+<!-- TO DO:
+  - UPLOAD IMAGE W/ CLOUDINARY
+  - -->
