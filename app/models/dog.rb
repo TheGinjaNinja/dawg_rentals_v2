@@ -3,6 +3,7 @@ class Dog < ApplicationRecord
   has_many :bookings
   has_many :reviews
   has_many :availabilities
+  has_one_attached :photo
   validates :name, :breed, :bio, presence: true
 
   CATEGORIES = ["Husky",

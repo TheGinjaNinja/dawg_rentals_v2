@@ -6,11 +6,7 @@
     <%= f.input :breed, label: "Select the breed", collection: Dog::CATEGORIES %>
     <%= f.input :bio, label: "Tell us something more about your dog" %>
     <%= f.input :location %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
-
-
-<!-- TO DO:
-  - UPLOAD IMAGE W/ CLOUDINARY
-  - -->
