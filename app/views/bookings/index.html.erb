@@ -1,0 +1,8 @@
+<h1>Bookings#index</h1>
+
+<h2>All bookings</h2>
+<ol>
+<% bookings.each do |booking| %>
+  <li><%= booking.user_id, booking.dog_id %></li>
+<% end %>
+</ol>

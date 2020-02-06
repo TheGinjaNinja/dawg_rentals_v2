@@ -13,6 +13,11 @@
 <p> <%=  @dog.name %> lives at: <%=  @dog.location %> </p>
 
 <div class="button">
+  <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-primary btn-sm" %>
+</div>
+
+
+<div class="button">
   <%= link_to "Go back to all the Dawgs" , dogs_path, class: "btn btn-primary btn-sm" %>
 </div>
 
