@@ -1,16 +1,7 @@
 <h1>Bookings</h1>
 
 <%= simple_form_for [@dog, @booking],:url => dog_bookings_path, :method => :post do |f| %>
-  <h2>Select the dates you would like to book</h2>
-  <%= f.input :booked_from %>
-  <%= f.input :booked_until %>
-
-
-  <%= f.button :submit %>
-<% end %>
-
-<!-- date, price, dog_id -->
-
+  <h2>Select the dates you would like to hang out</h2>
 <div class="container">
     <div class="row">
         <div class='col-sm-6'>
@@ -30,4 +21,8 @@
         </script>
     </div>
 </div>
+
+  <%= f.button :submit %>
+<% end %>
+
 
