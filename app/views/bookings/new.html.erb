@@ -1,33 +1,11 @@
-<h1>Bookings</h1>
-
-<%= simple_form_for [@dog, @booking],:url => dog_bookings_path, :method => :post do |f| %>
-  <h2>Select the dates you would like to book</h2>
-  <%= f.input :booked_from %>
-  <%= f.input :booked_until %>
-
-
-  <%= f.button :submit %>
-<% end %>
-
-<!-- date, price, dog_id -->
-
-<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
-    </div>
+<div class = "container">
+  <div class= "form-wrapper" style="width: 500px; padding: 50px; margin: 0 auto;">
+    <%= simple_form_for [@dog, @booking] do |f| %>
+    <h1>Book your dog</h1>
+    <%= f.input :booked_from %>
+    <%= f.input :booked_until %>
+  <%= f.submit "Go", class: "btn btn-primary" %>
+  <% end %>
+</div>
 </div>
 
