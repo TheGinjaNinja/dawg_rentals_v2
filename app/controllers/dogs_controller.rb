@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
   # The index logic is for the search form
   def index
-    @dogs = Dog.all
+    @dogs = Dog.all.reverse
   end
 
   def show
