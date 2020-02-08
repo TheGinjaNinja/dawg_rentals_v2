@@ -5,24 +5,25 @@
 <% end %>
   <div class="container">
     <div>
-      <h1>Meet <%= @dog.name %></h1>
-      <h1> Say hello to <%=  @dog.name %> </h1>
-      <p> The breed is: <%= @dog.breed %> </p>
-      <p> A brief description of <%=  @dog.name %> is: <%= @dog.bio %></p>
-      <p> <%=  @dog.name %> lives at: <%=  @dog.location %> </p>
-    </div>
-    <div class="combine">
-      <div class="button mb-3">
-        <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-primary btn-sm" %>
+      <div class="dog-info">
+        <h1>Meet <%= @dog.name %></h1>
+        <p> The breed is: <%= @dog.breed %> </p>
+        <p> A brief description of <%=  @dog.name %> is: <%= @dog.bio %></p>
+        <p> <%=  @dog.name %> lives at: <%=  @dog.location %> </p>
       </div>
-      <div class="button mb-3">
-        <%= link_to "Show all" , dogs_path, class: "btn btn-primary btn-sm" %>
-      </div>
-      <div class="button mb-3">
-        <%= link_to "Edit dog", edit_dog_path(@dog), class: "btn btn-primary btn-sm" %>
-      </div>
-      <div class="button mb-3">
-        <p> <%= link_to "Remove Dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-primary btn-sm" %> </p>
+      <div class="combine">
+        <div class="button mb-3">
+          <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-primary btn-sm" %>
+        </div>
+        <div class="button mb-3">
+          <%= link_to "Show all" , dogs_path, class: "btn btn-primary btn-sm" %>
+        </div>
+        <div class="button mb-3">
+          <%= link_to "Edit dog", edit_dog_path(@dog), class: "btn btn-primary btn-sm" %>
+        </div>
+        <div class="button mb-3">
+          <p> <%= link_to "Remove Dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-primary btn-sm" %> </p>
+        </div>
       </div>
     <div>
   </div>
