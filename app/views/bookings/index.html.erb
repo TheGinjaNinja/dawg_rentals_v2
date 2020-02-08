@@ -9,8 +9,9 @@
     <p> Your booking is scheduled <%= booking.booked_from %> until <%= booking.booked_until %></p>
   </div>
 </div>
-  <%= link_to 'View Booking', dog_booking_path(booking.dog, booking), class: "btn btn-primary btn-sm" %>
-  <p> <%= link_to 'Delete Booking', booking_path(booking.dog),  class: "btn btn-primary btn-sm" %></p>
+  <p><%= link_to 'View Booking', dog_booking_path(booking.dog, booking), class: "btn btn-primary btn-sm" %></p>
+   <p><%= link_to 'Delete Booking', booking_path(booking), method: :delete,  class: "btn btn-primary btn-sm" %></p>
+  <p> <%= link_to 'Update Booking', booking_path(booking.dog),  class: "btn btn-primary btn-sm" %></p>
 <% end %>
 </ul>
 
