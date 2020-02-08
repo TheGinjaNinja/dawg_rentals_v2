@@ -2,10 +2,17 @@
 
 <ul>
 <% @bookings.each do |booking| %>
-  <li> You have booked <%= booking.dog.name %> between <%= booking.booked_from %> until <%= booking.booked_until %> %></li>
-  <%= link_to 'View Booking', dog_booking_path(booking.dog, booking) %>
-  <p> <%= link_to 'Create a new booking', new_dog_booking_path(booking.dog) %></p>
+<div class="card-product">
+  <img src="https://source.unsplash.com/800x600/?dog/<%= rand(50) %>" />
+  <div class="card-product-infos">
+    <h2><%= booking.dog.name %></h2>
+    <p> Your booking is scheduled <%= booking.booked_from %> until <%= booking.booked_until %></p>
+  </div>
+</div>
+  <%= link_to 'View Booking', dog_booking_path(booking.dog, booking), class: "btn btn-primary btn-sm" %>
+  <p> <%= link_to 'Delete Booking', booking_path(booking.dog),  class: "btn btn-primary btn-sm" %></p>
 <% end %>
 </ul>
+
 
 
