@@ -2,8 +2,8 @@
   <div class= "form-wrapper" style="width: 500px; padding: 50px; margin: 0 auto;">
     <%= simple_form_for [@dog, @booking] do |f| %>
     <h1>Book your dog</h1>
-    <%= f.input :booked_from %>
-    <%= f.input :booked_until %>
+    <%= f.input :booked_from, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :booked_until, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.submit "Go", class: "btn btn-primary" %>
   <% end %>
 </div>
