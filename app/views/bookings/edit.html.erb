@@ -1,2 +1,11 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<div class="container">
+  <h1 style="color: black">Edit your booking details:</h1>
+
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :booked_from, label: "Start date", as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :booked_until, label: "End date", as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+

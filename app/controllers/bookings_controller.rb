@@ -33,9 +33,9 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to new_dog_booking_path(@booking)
+      redirect_to booking_path(@booking)
     else
-      render :new
+      render :edit
     end
   end
 
