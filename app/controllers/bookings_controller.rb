@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.dog = @dog = Dog.find(params[:dog_id])
     if @booking.save
-      redirect_to dog_booking_path(@dog, @booking)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
