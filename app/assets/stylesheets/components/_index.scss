@@ -10,9 +10,41 @@
 @import "bookingcontainer";
 
 .container h1, h2 {
+  font-family: Raleway-SemiBold;
   text-align: center;
 }
 
 .title h1 {
   color: black;
 }
+
+.combine-btn {
+  display: flex;
+}
+
+.button.mb-3 {
+  padding-right: 10px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+
+.btn {
+  margin-top: 10px;
+  font-family: Raleway-SemiBold;
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: 1px;
+  line-height: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+  color: #FFF;
+  background: rgba(58, 133, 191, 0.75);
+  border: 2px solid rgba(58, 133, 191, 0.75);
+}
+
