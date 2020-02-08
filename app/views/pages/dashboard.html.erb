@@ -11,7 +11,7 @@
       <% else %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/800x600/?dog/<%= rand(500) %>);">
       <% end %>
-          <h2><%= link_to booking.dog.name, dog_booking_path(booking.dog, booking), class: "text" %></h2>
+          <h2><%= link_to booking.dog.name, dog_bookings_path(booking.dog, booking), class: "text" %></h2>
         </div>
     <% end %>
   </div>
