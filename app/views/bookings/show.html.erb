@@ -1,3 +1,13 @@
 <h1>Your Bookings</h1>
 
-
+<div class="card-dog">
+  <img src="https://source.unsplash.com/800x600/?dog/<%= rand(50) %>'"/>
+  <div class="dog-trip-infos">
+    <div>
+      <h2><%= @dog.name %></h2>
+      <p><%= @dog.bio %></p>
+    </div>
+    <h2 class="dog-trip-pricing"><%= @booking&.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dog-user avatar-bordered" />
+  </div>
+</div>

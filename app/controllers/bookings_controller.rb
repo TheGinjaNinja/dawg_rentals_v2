@@ -2,13 +2,14 @@ class BookingsController < ApplicationController
   before_action :make_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
     # if admin show all bookings
     # if user show personal bookings
   end
 
   def show
     @booking = Booking.find(params[:id])
+    @dog = @booking.dog
   end
 
   def new

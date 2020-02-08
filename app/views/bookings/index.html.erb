@@ -2,9 +2,10 @@
 
 <ul>
 <% @bookings.each do |booking| %>
-  <li> You have booked <%= booking.dog_id %> between <%= booking.booked_from %> until <%= booking.booked_until %> booking.dog_id %></li>
-  <%= link_to 'View Booking', dog_booking_path(booking)%>
+  <li> You have booked <%= booking.dog.name %> between <%= booking.booked_from %> until <%= booking.booked_until %> %></li>
+  <%= link_to 'View Booking', dog_booking_path(booking.dog, booking) %>
+  <p> <%= link_to 'Create a new booking', new_dog_booking_path(booking.dog) %></p>
 <% end %>
 </ul>
 
-<p> <%= link_to 'Create a new booking', new_dog_booking_path %></p>
+
