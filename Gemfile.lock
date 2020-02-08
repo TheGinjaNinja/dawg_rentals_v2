@@ -224,11 +224,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-<<<<<<< HEAD
   bootstrap3-datetimepicker-rails (~> 4.17.47)
-=======
   cloudinary (~> 1.12.0)
->>>>>>> 36c9bb355daa1c48401106158da949a317998bdd
   devise
   dotenv-rails
   faker

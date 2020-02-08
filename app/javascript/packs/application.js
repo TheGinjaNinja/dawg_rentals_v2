@@ -2,5 +2,3 @@
 //= require bootstrap-datetimepicker
 import "bootstrap";
 
-
-
