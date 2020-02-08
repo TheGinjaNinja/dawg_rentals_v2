@@ -1,8 +1,10 @@
-<h1>Bookings#index</h1>
+<h1>Your Bookings</h1>
 
-<h2>All bookings</h2>
-<ol>
-<% bookings.each do |booking| %>
-  <li><%= booking.user_id, booking.dog_id %></li>
+<ul>
+<% @bookings.each do |booking| %>
+  <li> You have booked <%= booking.dog_id %> between <%= booking.booked_from %> until <%= booking.booked_until %> booking.dog_id %></li>
+  <%= link_to 'View Booking', dog_booking_path(booking)%>
 <% end %>
-</ol>
+</ul>
+
+<p> <%= link_to 'Create a new booking', new_dog_booking_path %></p>
