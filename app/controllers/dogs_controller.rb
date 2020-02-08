@@ -12,7 +12,7 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.user = current_user
     @dog.save
-    redirect_to dogs_path
+    redirect_to dog_path(@dog)
   end
 
   def new
