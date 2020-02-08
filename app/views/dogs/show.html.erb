@@ -1,21 +1,22 @@
-<div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
-    <div class="container">
+<% if @dog.photo.attached? %>
+  <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @dog.photo.key, height: 1200, width: 1600, crop: :fill %>)">
+<% else %>
+  <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
+<% end %>
+  <div class="container">
+    <div>
       <h1>Meet <%= @dog.name %></h1>
       <h1> Say hello to <%=  @dog.name %> </h1>
-
       <p> The breed is: <%= @dog.breed %> </p>
-
       <p> A brief description of <%=  @dog.name %> is: <%= @dog.bio %></p>
-
       <p> <%=  @dog.name %> lives at: <%=  @dog.location %> </p>
-
-<div class="button">
-  <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-primary btn-sm" %>
-</div>
-
-  <div class="button">
-    <%= link_to "Go back to all the Dawgs" , dogs_path, class: "btn btn-primary btn-sm" %>
-      </div>
     </div>
+    <div class="button mb-3">
+      <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-primary btn-sm" %>
+    </div>
+    <div class="button mb-3">
+      <%= link_to "Show all" , dogs_path, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
 </div>
 
