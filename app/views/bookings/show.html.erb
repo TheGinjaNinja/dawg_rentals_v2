@@ -1,18 +1,19 @@
-<h1 style= "color: black; ">Your Bookings</h1>
+<h1 style= "color: black; text-align: center;">Your Bookings <%= @dog.name %> </h1>
 
 <div class="card-dog">
   <img src="https://source.unsplash.com/800x600/?dog/<%= rand(50) %>'"/>
   <div class="dog-trip-infos">
     <div>
-      <h2><%= @dog.name %></h2>
-      <p><%= @dog.bio %></p>
-      <p> Your booking is scheduled <%= @booking.booked_from %> until <%= @booking.booked_until %></p>
+      <h2 style="text-align: left;"> Say Hello to <%= @dog.name %></h2>
+      <p> A bit about <%= @dog.name %> before your rental: <%= @dog.bio %></p>
+      <p> Your booking is scheduled on <%= @booking.booked_from %> until <%= @booking.booked_until %></p>
     </div>
     <h2 class="dog-trip-pricing"><%= @booking&.price %></h2>
     <img src="https://i.pinimg.com/originals/0a/42/7f/0a427f8c57082a1d1f0da6538acabf32.jpg" class="card-dog-user avatar-bordered" />
   </div>
 </div>
-
-<h2 ><%= link_to "View all bookings", bookings_path, class: "text" %></h2>
-
+<div class="booking-title">
+  <h2> <%= link_to "View all bookings", bookings_path, class: "text" %> </h2>
+</div>
+</div>
 
