@@ -24,6 +24,18 @@
         <div class="button mb-3">
           <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn-light btn-sm" %> </p>
         </div>
+        <div class="button mb-3">
+        <%= link_to "Add review", new_dog_review_path(@dog), class: "btn-light btn-sm" %>
+        </div>
       </div>
+      <div class="dog-reviews">
+      <h1> <%= @dog.name %> Reviews </h1>
+      <% @dog.reviews.each do |review| %>
+      <div class="card">
+      <p> <%= review.comment%> </p>
+      <p> The Dawgs rating is: <%= dog.rating %> </p>
+      <% end %>
+      </div>
+
   </div>
 

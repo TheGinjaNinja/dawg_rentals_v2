@@ -1,0 +1,23 @@
+<% if @dog.photo.attached? %>
+  <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @dog.photo.key, height: 1200, width: 1600, crop: :fill %>)">
+<% else %>
+  <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
+<% end %>
+<h1 class="text-center"> Post a review for <%= @dog.name %> </h1>
+
+<div class="container">
+  <div clas="row">
+    <div class="col-xs-12 col-sm-offset-3">
+
+      <%= simple_form_for [@dog, @review] do |f| %>
+        <%= f.input :comment, placeholder: "Good/Bad tell us about your rental" %>
+        <%= f.input :rating, placeholder: "From 1-5" %>
+        <%= f.submit  "post review", class: "btn btn-primary" %>
+
+      <% end %>
+
+
+
+    </div>
+  </div>
+</div>
