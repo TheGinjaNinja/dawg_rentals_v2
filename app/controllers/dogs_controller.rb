@@ -34,6 +34,7 @@ class DogsController < ApplicationController
   end
 
   def destroy
+    @dog = Dog.find(params[:id])
     if @dog.user == current_user
      @dog = Dog.find(params[:id])
      @dog.destroy

@@ -21,9 +21,11 @@
         <div class="button mb-3">
           <%= link_to "Edit your dog", edit_dog_path(@dog), class: "btn-light btn-sm" %>
         </div>
-        <div class="button mb-3">
-          <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn-light btn-sm" %> </p>
-        </div>
+        <% if @dog.user == current_user %>
+          <div class="button mb-3">
+            <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn-light btn-sm" %> </p>
+          </div>
+        <% end %>
         <div class="button mb-3">
         <%= link_to "Add review", new_dog_review_path(@dog), class: "btn-light btn-sm" %>
         </div>
