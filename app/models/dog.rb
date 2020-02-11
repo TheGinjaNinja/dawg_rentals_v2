@@ -6,6 +6,9 @@ class Dog < ApplicationRecord
   has_one_attached :photo
   validates :name, :breed, :bio, presence: true
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   CATEGORIES = ["Husky",
     "Jack Russel",
     "Doberman Pincher",
