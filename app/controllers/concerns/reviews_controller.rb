@@ -8,6 +8,7 @@ before_action :set_dog
   def create
     @review = Review.new(review_params)
     @review.dog = @dog
+    @review.user = current_user
     if @review.save
       redirect_to dog_path(@dog)
     else

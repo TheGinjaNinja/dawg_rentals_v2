@@ -9,7 +9,7 @@
   <div clas="row">
     <div class="col-xs-12 col-sm-offset-3">
 
-      <%= simple_form_for [@dog, @review] do |f| %>
+        <%= simple_form_for [@dog, @review] do |f| %>
         <%= f.input :comment, placeholder: "Good/Bad tell us about your rental" %>
         <%= f.input :rating, placeholder: "From 1-5" %>
         <%= f.submit  "post review", class: "btn btn-primary" %>

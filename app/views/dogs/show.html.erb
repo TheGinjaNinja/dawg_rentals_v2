@@ -28,12 +28,12 @@
         <%= link_to "Add review", new_dog_review_path(@dog), class: "btn-light btn-sm" %>
         </div>
       </div>
-      <div class="dog-reviews">
+      <div>
       <h1> <%= @dog.name %> Reviews </h1>
       <% @dog.reviews.each do |review| %>
-      <div class="card">
-      <p> <%= review.comment%> </p>
-      <p> The Dawgs rating is: <%= dog.rating %> </p>
+      <div class="cards">
+      <p> Users comment <%= review.comment%></p>
+      <p> Rating <%= review.rating %></p>
       <% end %>
       </div>
 
