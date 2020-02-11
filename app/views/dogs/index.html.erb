@@ -1,5 +1,5 @@
 <div class="profile_banner">
-  <div class="container">
+  <div class="dog-index-container">
     <div class="title">
     <h1>Find your new best friend</h1>
     </div>
@@ -18,8 +18,6 @@
   <!-- Map -->
   <div
     id="map"
-    style="width: 100%;
-    height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
