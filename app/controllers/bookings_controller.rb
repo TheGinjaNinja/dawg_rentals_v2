@@ -22,7 +22,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @dog = Dog.find(params[:dog_id])
     @booking.dog = Dog.find(params[:dog_id])
-
     if @booking.save
       redirect_to dog_booking_path(@dog, @booking)
     else
@@ -42,10 +41,13 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+   if @booking.user == current_user
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: "Booking deleted"
+   else
+    redirect_to bookings_path, notice: "You cannot delete this booking"
+   end
   end
-
 
   private
 
