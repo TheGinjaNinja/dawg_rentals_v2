@@ -8,6 +8,14 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%>
+        <%= f.input :telephone,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "telephone" }%>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

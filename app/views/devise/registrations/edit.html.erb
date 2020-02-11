@@ -8,7 +8,8 @@
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-
+        <%= f.input :name, required: true, autofocus: true %>
+        <%= f.input :telephone, required: true, autofocus: true %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
@@ -30,9 +31,14 @@
         <%= f.button :submit, "Update" %>
       </div>
     <% end %>
+      <p> <%= link_to "my dashboard", dashboard_path%> </p>
+
+
+
   </div>
   <div class="row" style="padding: 10px 10px">
     <div>
+      <p> <%= link_to "Go back to my dashboard", dashboard_path%> </p>
       <h3>Cancel my account</h3>
       <br>
       <p>Unhappy?</p>
