@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.dog = Dog.find(params[:dog_id])
 
     if @booking.save
-      redirect_to dog_booking_path(@dog, @booking)
+      redirect_to dog_path(@dog)
     else
       render :new
     end
@@ -34,18 +34,19 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @dog = @booking.dog
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
+      redirect_to dog_path(@dog)
     else
       render :edit
     end
   end
 
   def destroy
+    @dog = @booking.dog
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dog_path(@dog)
   end
-
 
   private
 
