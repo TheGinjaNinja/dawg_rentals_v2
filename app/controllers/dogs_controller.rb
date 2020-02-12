@@ -17,10 +17,10 @@ class DogsController < ApplicationController
   end
 
   def create
-    @dog = Dog.new(dog_params)
-    @dog.user = current_user
-    @dog.save
-    redirect_to dog_path(@dog)
+     @dog = Dog.new(dog_params)
+     @dog.user = current_user
+     @dog.save
+     redirect_to dog_path(@dog)
   end
 
   def new
@@ -28,9 +28,13 @@ class DogsController < ApplicationController
   end
 
   def update
-    @dog = Dog.find(params[:id])
-    @dog.update(dog_params)
-    redirect_to dog_path(@dog)
+    if @dog.user == current_user
+     @dog = Dog.find(params[:id])
+     @dog.update(dog_params)
+     redirect_to dog_path(@dog), notice: "Dog profile updated"
+    else
+     redirect_to dog_path(@dog), notice: "You must be the owner to make changes"
+    end
   end
 
   def edit
@@ -38,10 +42,15 @@ class DogsController < ApplicationController
   end
 
   def destroy
-    @dog = Dog.find(params[:id])
-    @dog.destroy
-    redirect_to dogs_path
+    if @dog.user == current_user
+     @dog = Dog.find(params[:id])
+     @dog.destroy
+     redirect_to dogs_path, notice: "Dog profile deleted"
+    else
+    redirect_to dogs_path, notice: "You must be the owner to make changes"
+    end
   end
+
 
   private
 

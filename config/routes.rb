@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :dogs, only: [:index, :show, :create, :new, :update, :edit, :destroy] do
     resources :availabilities, only: [:index, :show, :create, :new]
     resources :bookings, only: [:create, :new, :show]
+    resources :reviews, only: [:index, :show, :create, :new]
   end
   resources :bookings, only: [:index, :destroy, :update, :edit]
-  resources :reviews, only: [:index, :show, :create, :new]
 
   get 'dashboard', to: "pages#dashboard", as: :dashboard
 end
