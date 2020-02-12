@@ -1,10 +1,19 @@
-body {
-
+.flexbox {
+  display: flex;
 }
 
-.profile_banner {
-  display: flex;
-  padding-top: 0;
+.dog-card-container {
+  // background-color: yellow;
+  width: 50vw;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+#map {
+  width: 50vw;
+  height: 100vh;
+  position: sticky;
+  top: 0px;
 }
 
 .title h1 {
@@ -12,15 +21,3 @@ body {
   margin: 32px 0;
 }
 
-.dog-index-container {
-  // background-color: yellow;
-  width: 50%;
-  overflow-y: auto;
-  padding-bottom: 10vh;
-}
-
-#map {
-  position: sticky;
-  width: 50vw;
-  height: 100vh;
-}
