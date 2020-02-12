@@ -1,20 +1,26 @@
+body {
+
+}
+
 .profile_banner {
   display: flex;
   padding-top: 0;
 }
 
-.title {
-  margin-top: 24px;
+.title h1 {
+  text-align: center;
+  margin: 32px 0;
 }
 
 .dog-index-container {
   // background-color: yellow;
   width: 50%;
+  overflow-y: auto;
+  padding-bottom: 10vh;
 }
 
 #map {
   position: sticky;
-  top: 72px;
   width: 50vw;
   height: 100vh;
 }
