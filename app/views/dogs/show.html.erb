@@ -29,12 +29,12 @@
         </div>
       </div>
       <div>
-      <h1> <%= @dog.name %> Reviews </h1>
-      <% @dog.reviews.each do |review| %>
-      <div class="cards">
-      <p> Users comment <%= review.comment%></p>
-      <p> Rating <%= review.rating %></p>
-      <% end %>
+        <h1 style="color: white"> <%= @dog.name %> Reviews </h1>
+        <% @dog.reviews.each do |review| %>
+        <div class="cards">
+        <p> Users comment <%= review.comment%></p>
+        <p> Rating <%= review.rating %></p>
+        <% end %>
       </div>
 
   </div>
