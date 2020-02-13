@@ -22,6 +22,8 @@
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
 
+        <%= f.input :photo, as: :file %>
+
         <h3> Change Password </h3>
 
         <%= f.input :password,
