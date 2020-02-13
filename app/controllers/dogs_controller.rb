@@ -10,7 +10,8 @@ class DogsController < ApplicationController
     @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,
-        lng: dog.longitude
+        lng: dog.longitude,
+        image_url: helpers.asset_url('paw.svg')
       }
     end
   end
