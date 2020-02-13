@@ -1,27 +1,49 @@
-.banner h1{
+.bg {
+  height: 100vh;
+  font-color: white;
+  z-index: 1;
+  position: absolute;
+}
+
+.bg h1 {
+  color: white;
+  opacity: 0.75;
+  padding: 80px;
+}
+
+.button-container a {
+  color: white;
+}
+
+.jumbotron {
+  min-height: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: black;
+  margin-bottom: 0px;
+}
+
+#jumboContainer {
+  margin: auto;
+  width: 70%;
+  top: 50px;
+  padding: 20px 0;
   text-align: center;
 }
 
-.banner {
-  background-image: url("https://i.pinimg.com/originals/96/ae/87/96ae8773333e4f0397462eded8af5dc8.jpg");
-  background-size: cover;
+.jumbotron video {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
 }
 
-.banner h2 {
-  padding-top: 20px;
-  text-align: center;
-  font-style: italic;
+#title-text h1 {
+  color: white;
+  z-index: 2;
 }
 
-.nav-link a {
-  color: blue;
-}
-
-.booking-title a.text {
-  color: black;
-}
-
-.contactus h1 {
-  text-align: center;
-}
