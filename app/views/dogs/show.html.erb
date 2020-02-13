@@ -3,17 +3,49 @@
 <% else %>
   <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
 <% end %>
-  <div class="container">
-    <div>
-      <h1>Meet <%= @dog.name %></h1>
+  <div class="container" style="text-align: center;">
+    <div style="margin-bottom: 20px">
+      <h1 style="color: white"> Meet <%= @dog.name %> </h1>
       <p> Breed: <%= @dog.breed %> </p>
       <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
-      <p> <%=  @dog.name %> location: <%=  @dog.location %> </p>
-      <p>  Her owner is </p>
+      <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
+      <p>  Her owner is: <%= @dog.user.name %></p>
     </div>
-      <div class="button mb-3">
-        <%= link_to "Book Now", new_dog_booking_path(@dog), class: "btn-danger btn-lg" %>
+    <% @dog_bookings.each do |booking|%>
+      <% if booking.user == current_user %>
+        <div class="booking-cards" style="text-align: center">
+          <p> From: <%= booking.booked_from %> </p>
+          <p> Until: <%= booking.booked_until %></p>
+          <div class="button mb-3">
+            <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary btn-sm" %>
+          </div>
+          <div class="button mb-3">
+            <%= link_to "Remove booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="button mb-3">
+        <%= link_to "Book Now", new_dog_booking_path(@dog), class: "btn btn-gradient" %>
       </div>
+
+      <h1 style="color: white"> <%= @dog.name %> Reviews </h1>
+      <div>
+
+        <% if @dog.reviews.present? %>
+          <% @dog.reviews.each do |review| %>
+          <div class="cards">
+          <p> Users comment: <%= review.comment%></p>
+          <p> Rating (1-5):  <%= review.rating %></p>
+          </div>
+          <% end %>
+        <% else %>
+          <p> Sadly we dont have a reviews for <%= @dog.name %> </p>
+        <% end %>
+      </div>
+
+
       <div class="combine-btn">
         <div class="button mb-3">
           <%= link_to "Go back to other dogs" , dogs_path, class: "btn-light btn-sm" %>
@@ -30,14 +62,6 @@
         <%= link_to "Add review", new_dog_review_path(@dog), class: "btn-light btn-sm" %>
         </div>
       </div>
-      <div>
-      <h1> <%= @dog.name %> Reviews </h1>
-      <% @dog.reviews.each do |review| %>
-      <div class="cards">
-      <p> Users comment <%= review.comment%></p>
-      <p> Rating <%= review.rating %></p>
-      <% end %>
-      </div>
 
-  </div>
+
 

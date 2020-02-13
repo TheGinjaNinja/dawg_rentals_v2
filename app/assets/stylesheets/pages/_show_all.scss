@@ -1,0 +1,33 @@
+.flexbox {
+  display: flex;
+}
+
+.dog-card-container {
+  // background-color: yellow;
+  width: 50vw;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+#map {
+  width: 50vw;
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+}
+
+.title h1 {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+

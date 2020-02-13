@@ -1,7 +1,18 @@
-<div class="profile_banner">
-  <div class="container">
+<div class="flexbox">
+
+  <div class="dog-card-container">
     <div class="title">
-    <h1>Find your new best friend</h1>
+      <h1>Find your new best friend</h1>
+      <div class="button-container">
+        <%= simple_form_for :search, url: dogs_path, method: :get do |f| %>
+          <div class="search-form-control form-group">
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search by location for your dream dawg" />
+            <button name="button" type="submit" class="btn btn-flat">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="dog-cards">
       <% @dogs.each do |dog| %>
@@ -14,6 +25,11 @@
         </div>
       <%end%>
     </div>
+  </div>
+
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
