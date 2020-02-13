@@ -6,12 +6,46 @@
 @import "cards";
 @import "dogcard";
 @import "bookingcard";
+@import "footer";
 @import "bookingcontainer";
 
 .container h1, h2 {
+  font-family: Raleway-SemiBold;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .title h1 {
   color: black;
 }
+
+.combine-btn {
+  margin-top: 30px;
+  display: flex;
+}
+
+.button.mb-3 {
+  padding-right: 10px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+
+.btn-home {
+  font-family: Raleway-SemiBold;
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: 1px;
+  line-height: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-home:hover {
+  color: #FFF;
+  background: rgba(58, 133, 191, 0.75);
+  border: 2px solid rgba(58, 133, 191, 0.75);
+}
+

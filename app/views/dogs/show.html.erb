@@ -5,10 +5,11 @@
 <% end %>
   <div class="container">
     <div>
-      <h1> Say hello to <%=  @dog.name %> </h1>
-      <p> The breed is: <%= @dog.breed %> </p>
-      <p> A brief description of <%=  @dog.name %> is: <%= @dog.bio %></p>
-      <p> <%=  @dog.name %> lives at: <%= @dog.location %> </p>
+      <h1> Meet <%= @dog.name %> </h1>
+      <p> Breed: <%= @dog.breed %> </p>
+      <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
+      <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
+      <p>  Her owner is </p>
     </div>
     <% @dog_bookings.each do |booking|%>
     <h4 style="text-align: left">Your bookings</h4>
@@ -27,15 +28,29 @@
     <% end %>
     <div class="">
       <div class="button mb-3">
-        <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-primary btn-sm" %>
+        <%= link_to "Book Now", new_dog_booking_path(@dog), class: "btn-danger btn-lg" %>
       </div>
-      <div class="button mb-3">
-        <%= link_to "Edit dog", edit_dog_path(@dog), class: "btn btn-primary btn-sm" %>
+      <div class="combine-btn">
+        <div class="button mb-3">
+          <%= link_to "Go back to other dogs" , dogs_path, class: "btn-light btn-sm" %>
+        </div>
+        <div class="button mb-3">
+          <%= link_to "Edit your dog", edit_dog_path(@dog), class: "btn-light btn-sm" %>
+        </div>
+        <div class="button mb-3">
+          <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn-light btn-sm" %> </p>
+        </div>
+        <div class="button mb-3">
+        <%= link_to "Add review", new_dog_review_path(@dog), class: "btn-light btn-sm" %>
+        </div>
       </div>
-      <div class="button mb-3">
-        <p> <%= link_to "Remove Dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-primary btn-sm" %> </p>
+      <div>
+        <h1> <%= @dog.name %> Reviews </h1>
+        <% @dog.reviews.each do |review| %>
+        <div class="cards">
+        <p> Users comment <%= review.comment%></p>
+        <p> Rating <%= review.rating %></p>
+        <% end %>
       </div>
-    <div>
   </div>
-</div>
 
