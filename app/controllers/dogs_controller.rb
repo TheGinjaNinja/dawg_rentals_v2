@@ -4,7 +4,7 @@ class DogsController < ApplicationController
     if params[:query].present?
       @dogs = Dog.geocoded.where(location: params[:query])
     else
-      @dogs = Dog.geocoded.reverse
+      @dogs = Dog.all.reverse
     end
 
     @markers = @dogs.map do |dog|
@@ -22,10 +22,10 @@ class DogsController < ApplicationController
   end
 
   def create
-     @dog = Dog.new(dog_params)
-     @dog.user = current_user
-     @dog.save
-     redirect_to dog_path(@dog)
+    @dog = Dog.new(dog_params)
+    @dog.user = current_user
+    @dog.save
+    redirect_to dog_path(@dog)
   end
 
   def new
@@ -33,13 +33,9 @@ class DogsController < ApplicationController
   end
 
   def update
-    if @dog.user == current_user
-     @dog = Dog.find(params[:id])
-     @dog.update(dog_params)
-     redirect_to dog_path(@dog), notice: "Dog profile updated"
-    else
-     redirect_to dog_path(@dog), notice: "You must be the owner to make changes"
-    end
+    @dog = Dog.find(params[:id])
+    @dog.update(dog_params)
+    redirect_to dog_path(@dog), notice: "Dog profile updated"
   end
 
   def edit
@@ -47,19 +43,14 @@ class DogsController < ApplicationController
   end
 
   def destroy
-    if @dog.user == current_user
-     @dog = Dog.find(params[:id])
-     @dog.destroy
-     redirect_to dogs_path, notice: "Dog profile deleted"
-    else
-    redirect_to dogs_path, notice: "You must be the owner to make changes"
-    end
+    @dog = Dog.find(params[:id])
+    @dog.destroy
+    redirect_to dogs_path, notice: "Dog profile deleted"
   end
-
 
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :bio, :location, :photo)
+    params.require(:dog).permit(:name, :breed, :bio, :location, :photo, :user)
   end
 end
