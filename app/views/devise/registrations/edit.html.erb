@@ -17,6 +17,13 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
 
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+
+        <h3> Change Password </h3>
+
         <%= f.input :password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,
@@ -24,27 +31,25 @@
         <%= f.input :password_confirmation,
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
       </div>
 
-      <div class="form-actions">
+      <button type="button" class="btn btn-primary">
         <%= f.button :submit, "Update" %>
-      </div>
+      </button>
     <% end %>
 
 
 
-
   </div>
   <div class="row" style="padding: 10px 10px">
-    <div>
-      <h3> <%= link_to "Go back to my dashboard", dashboard_path%> </h3>
-      <h3><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></h3>
+    <div class="btn btn-primary">
+      <%= link_to "Go back to dashboard", dashboard_path%>
     </div>
   </div>
+
   <div class="row" style="padding: 10px 10px">
+    <div class="btn btn-danger">
+      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
   </div>
-</div>
+

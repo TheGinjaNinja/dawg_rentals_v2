@@ -1,10 +1,13 @@
 class DogsController < ApplicationController
   # The index logic is for the search form
   def index
-    @dogs = Dog.all.reverse
+    if params[:query].present?
+      @dogs = Dog.geocoded.where(location: params[:query])
+    else
+      @dogs = Dog.geocoded.reverse
+    end
 
-    @dogs_w_loc = Dog.geocoded
-    @markers = @dogs_w_loc.map do |dog|
+    @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,
         lng: dog.longitude
@@ -14,6 +17,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @dog_bookings = @dog.bookings
   end
 
   def create
