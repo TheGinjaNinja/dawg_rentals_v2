@@ -2,6 +2,14 @@ class DogsController < ApplicationController
   # The index logic is for the search form
   def index
     @dogs = Dog.all.reverse
+
+    @dogs_w_loc = Dog.geocoded
+    @markers = @dogs_w_loc.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude
+      }
+    end
   end
 
   def show

@@ -1,0 +1,23 @@
+.flexbox {
+  display: flex;
+}
+
+.dog-card-container {
+  // background-color: yellow;
+  width: 50vw;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+#map {
+  width: 50vw;
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+}
+
+.title h1 {
+  text-align: center;
+  margin: 32px 0;
+}
+
