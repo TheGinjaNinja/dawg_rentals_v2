@@ -1,7 +1,8 @@
-<div class="profile_banner">
-  <div class="container">
+<div class="flexbox">
+
+  <div class="dog-card-container">
     <div class="title">
-    <h1>Find your new best friend</h1>
+      <h1>Find your new best friend</h1>
     </div>
     <div class="dog-cards">
       <% @dogs.each do |dog| %>
@@ -14,6 +15,11 @@
         </div>
       <%end%>
     </div>
+  </div>
+
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
