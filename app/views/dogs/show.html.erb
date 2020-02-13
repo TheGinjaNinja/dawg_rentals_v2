@@ -4,15 +4,14 @@
   <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
 <% end %>
   <div class="container">
-    <div>
-      <h1> Meet <%= @dog.name %> </h1>
+    <div style="margin-bottom: 20px">
+      <h1 style="color: white"> Meet <%= @dog.name %> </h1>
       <p> Breed: <%= @dog.breed %> </p>
       <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
       <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
       <p>  Her owner is </p>
     </div>
     <% @dog_bookings.each do |booking|%>
-    <h4 style="text-align: left">Your bookings</h4>
       <% if booking.user == current_user %>
         <div class="booking-cards" style="text-align: center">
           <p> From: <%= booking.booked_from %> </p>
