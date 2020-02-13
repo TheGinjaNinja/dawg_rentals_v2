@@ -9,7 +9,7 @@
       <p> Breed: <%= @dog.breed %> </p>
       <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
       <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
-      <p>  Her owner is </p>
+      <p>  Her owner is: <%= @dog.user.name %></p>
     </div>
     <% @dog_bookings.each do |booking|%>
       <% if booking.user == current_user %>
@@ -30,14 +30,14 @@
         <%= link_to "Book Now", new_dog_booking_path(@dog), class: "btn btn-gradient" %>
       </div>
 
+      <h1 style="color: white"> <%= @dog.name %> Reviews </h1>
       <div>
-        <h1 style="color: white"> <%= @dog.name %> Reviews </h1>
+
         <% if @dog.reviews.present? %>
-          <h1 style="color: white"> <%= @dog.name %> Reviews </h1>
           <% @dog.reviews.each do |review| %>
           <div class="cards">
-          <p> Users comment <%= review.comment%></p>
-          <p> Rating <%= review.rating %></p>
+          <p> Users comment: <%= review.comment%></p>
+          <p> Rating (1-5):  <%= review.rating %></p>
           </div>
           <% end %>
         <% else %>
