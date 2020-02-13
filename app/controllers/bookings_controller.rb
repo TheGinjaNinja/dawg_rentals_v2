@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking.dog = Dog.find(params[:dog_id])
     if @booking.save
-      redirect_to dog_booking_path(@dog, @booking)
+      redirect_to dog_path(@dog)
     else
       render :new
     end
@@ -33,20 +33,24 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @dog = @booking.dog
+
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
+      redirect_to dog_path(@dog)
     else
       render :edit
     end
   end
 
   def destroy
-   if @booking.user == current_user
-    @booking.destroy
-    redirect_to bookings_path, notice: "Booking deleted"
-   else
-    redirect_to bookings_path, notice: "You cannot delete this booking"
-   end
+    @dog = @booking.dog
+
+    if @booking.user == current_user
+      @booking.destroy
+      redirect_to dog_path(@dog), notice: "Booking deleted"
+    else
+      redirect_to dog_path(@dog), notice: "You cannot delete this booking"
+    end
   end
 
   private
@@ -56,8 +60,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-   params.require(:booking).permit(:booked_until, :booked_from, :price, :status, :dog_id, :user_id)
+    params.require(:booking).permit(:booked_until, :booked_from, :price, :status, :dog_id, :user_id)
   end
 end
-
-

@@ -6,7 +6,6 @@
     <%= f.input :breed, label: "Edit the breed", collection: Dog::CATEGORIES %>
     <%= f.input :bio, label: "Edit your dog's description" %>
     <%= f.input :location, label: "Edit your dog's location" %>
-    <!-- Work out how to edit the dog's photo -->
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, "Update your dogs info"%>
   <% end %>
