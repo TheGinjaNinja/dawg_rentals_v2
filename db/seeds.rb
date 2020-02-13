@@ -72,7 +72,6 @@ data_sets = [
 ]
 
 data_sets.each do |data_set|
-
   new_dog = Dog.new(
     name: getName,
     breed: data_set[0],
@@ -80,26 +79,16 @@ data_sets.each do |data_set|
     location: data_set[1],
     user: User.find(rand(1..4)),
   )
-
   # Attach photograph
-
-
+  image = URI.open("#{data_set[2]}")
+  new_dog.photo.attach(io: image, filename: "#{new_dog.name}.jpg", content_type: 'image/png')
   # Save dog
-
+  new_dog.save
 end
-
-
-Dog.create(
-
-  img_url: "https://source.unsplash.com/800x600/?dog"
-)
 
 puts "Created 20 dogs..."
 
-# 2 bookings per user
 
+# 2 bookings per user?
 
-
-
-
-puts "Seed completed"
+puts "Seed completed!"
