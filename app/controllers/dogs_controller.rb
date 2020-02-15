@@ -4,13 +4,14 @@ class DogsController < ApplicationController
     if params[:query].present?
       @dogs = Dog.geocoded.where(location: params[:query])
     else
-      @dogs = Dog.all.reverse
+      @dogs = Dog.geocoded.reverse
     end
 
     @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,
         lng: dog.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { dog: dog }),
         image_url: helpers.asset_url('paw.svg')
       }
     end
