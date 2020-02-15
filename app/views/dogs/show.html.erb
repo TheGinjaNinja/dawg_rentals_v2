@@ -77,16 +77,6 @@
   </div>
 
 
-      <div class="combine-btn">
-        <% if @dog.user == current_user %>
-          <div class="button mb-3">
-            <%= link_to "Edit your dog", edit_dog_path(@dog), class: "btn-danger btn-lg" %>
-          </div>
-          <div class="button mb-3">
-            <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn-danger btn-lg" %> </p>
-          </div>
-        <% end %>
-      </div>
 
 
 
