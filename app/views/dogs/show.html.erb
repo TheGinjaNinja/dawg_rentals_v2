@@ -56,8 +56,8 @@
         <% if booking.user == current_user %>
           <div class="card-category-review">
             <div class="booking-cards-show" style="text-align: center">
-              <p> From: <%= booking.booked_from %> </p>
-              <p> Until: <%= booking.booked_until %></p>
+              <p> From: <%= booking.booked_from.strftime('%Y-%m-%d') %> </p>
+              <p> Until: <%= booking.booked_until.strftime('%Y-%m-%d') %></p>
               <div class="button mb-3">
                 <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-gradient" %>
               </div>
