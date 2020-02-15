@@ -1,5 +1,5 @@
-<div class="container">
-  <h1 style="color: black">Edit your dog's details:</h1>
+<div class="container col-xs-12 col-sm-4 col-sm-offet 3">
+  <h1 style="color: black; font-family: Pacifico, cursive; padding-bottom: 50px;">Edit your dog's details:</h1>
 
   <%= simple_form_for @dog do |f| %>
     <%= f.input :name, label: "Edit your dog's name" %>
@@ -7,6 +7,10 @@
     <%= f.input :bio, label: "Edit your dog's description" %>
     <%= f.input :location, label: "Edit your dog's location" %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit, "Update your dogs info"%>
+    <div class= "submit-btn" >
+     <%= f.button :submit, "Update your dogs info", class: "btn btn-primary", style: "margin: 20px 0px; border-radius: 9px;" %>
   <% end %>
+ </div>
 </div>
+
+
