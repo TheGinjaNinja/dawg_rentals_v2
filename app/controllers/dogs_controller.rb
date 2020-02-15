@@ -46,7 +46,7 @@ class DogsController < ApplicationController
   def destroy
     @dog = Dog.find(params[:id])
     @dog.destroy
-    redirect_to dogs_path, notice: "Dog profile deleted"
+    redirect_to dashboard_path, notice: "Dog profile deleted"
   end
 
   private
