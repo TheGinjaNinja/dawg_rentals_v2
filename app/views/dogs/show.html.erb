@@ -4,7 +4,7 @@
       <p style="margin-top: 40px"> Breed: <%= @dog.breed %> </p>
       <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
       <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
-      <p>  Owner is: <%= @dog.user.name %></p>
+      <p>  Owner: <%= @dog.user.name %></p>
     <div class="button-grouping">
      <% if @dog.user != current_user %>
         <div class="button mb-3">
@@ -28,7 +28,7 @@
 
 
       <div class="dog-reviews">
-        <h1 style="color: black"> <%= @dog.name %> Reviews </h1>
+        <h1 style="color: black; font-family: Pacifico, cursive;"> <%= @dog.name %> Reviews </h1>
 
           <% if @dog.reviews.present? %>
             <% @dog.reviews.each do |review| %>
@@ -50,7 +50,7 @@
 
 
   <div class="show-booking">
-    <h1 style="color: black">  Your Bookings with <%= @dog.name %> </h1>
+    <h1 style="color: black; font-family: Pacifico, cursive;">  Your Bookings with <%= @dog.name %> </h1>
     <% if @dog.bookings.present? %>
       <% @dog_bookings.each do |booking|%>
         <% if booking.user == current_user %>
