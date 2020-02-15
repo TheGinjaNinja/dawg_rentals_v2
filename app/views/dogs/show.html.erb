@@ -4,7 +4,7 @@
       <p style="margin-top: 40px"> Breed: <%= @dog.breed %> </p>
       <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
       <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
-      <p>  Her owner is: <%= @dog.user.name %></p>
+      <p>  Owner is: <%= @dog.user.name %></p>
     <div class="button-grouping">
      <% if @dog.user != current_user %>
         <div class="button mb-3">
