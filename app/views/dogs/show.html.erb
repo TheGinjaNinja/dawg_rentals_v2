@@ -2,8 +2,8 @@
   <div class="container" style="text-align: center;">
       <h1 style="font-family: Pacifico"> Meet <%= @dog.name %> </h1>
       <p style="margin-top: 40px"> Breed: <%= @dog.breed %> </p>
-      <p> <%=  @dog.name %> bio: <%= @dog.bio %></p>
-      <p> <%=  @dog.name %> location: <%= @dog.location %> </p>
+      <p>  Bio: <%= @dog.bio %></p>
+      <p> Location: <%= @dog.location %> </p>
       <p>  Owner: <%= @dog.user.name %></p>
     <div class="button-grouping">
      <% if @dog.user != current_user %>
@@ -11,14 +11,14 @@
             <%= link_to "Book Now", new_dog_booking_path(@dog), class: "btn btn-gradient" %>
         </div>
         <div class="button mb-3">
-            <%= link_to "Book another dog", dogs_path, class: "btn btn-gradient" %>
+            <%= link_to "Search other dogs", dogs_path, class: "btn btn-gradient" %>
         </div>
       <% else %>
         <div class="button mb-3">
-            <%= link_to "Edit your dog", edit_dog_path(@dog), class: "btn btn-gradient" %>
+            <%= link_to "Edit your dog", edit_dog_path(@dog), class: "btn btn-gradient", style: "margin: 20px 0px; border-radius: 9px;"%>
         </div>
         <div class="button mb-3">
-          <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-gradient" %> </p>
+          <p> <%= link_to "Remove your dog", dog_path(@dog), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-gradient" , style: "margin: 20px 0px; border-radius: 9px;" %> </p>
         </div>
       <% end %>
     </div>
@@ -40,7 +40,7 @@
             </div>
             <% end %>
           <% else %>
-            <p> Sadly we dont have a reviews for <%= @dog.name %> </p>
+            <p> Sadly we dont yet have a review for <%= @dog.name %> </p>
           <% end %>
 
         </div>
