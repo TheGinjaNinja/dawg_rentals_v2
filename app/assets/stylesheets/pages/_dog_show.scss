@@ -54,6 +54,7 @@
 .show-booking {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .show-booking h1 {
@@ -86,4 +87,9 @@
   grid-gap: 10px;
   padding: 10px 10px;
   align: center;
+  margin-bottom: 10px;
+}
+
+.booking-cards-show p{
+  margin-top: 15px;
 }
