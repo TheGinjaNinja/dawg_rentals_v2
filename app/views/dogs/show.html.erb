@@ -29,7 +29,9 @@
 
       <div class="dog-reviews">
         <h1 style="color: black; font-family: Pacifico, cursive;"> <%= @dog.name %> Reviews </h1>
-
+        <% if @dog.user == current_user %>
+          <p> You cant review your own dog you idiot </p>
+        <% else %>
           <% if @dog.reviews.present? %>
             <% @dog.reviews.each do |review| %>
             <div class="card-category-dog", style="margin-top: 10px;">
@@ -42,7 +44,7 @@
           <% else %>
             <p> Sadly we dont yet have a review for <%= @dog.name %> </p>
           <% end %>
-
+        <% end %>
         </div>
 
 
