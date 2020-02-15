@@ -1,6 +1,14 @@
+.simple-form {
+  display: flex;
+
+}
+
 .search-form-control {
   position: relative;
-  width: 100px;
+}
+
+.form-group {
+  margin-bottom: 0px;
 }
 
 .search-form-control .btn {
@@ -11,13 +19,18 @@
 }
 
 .search-form-control .form-control {
-  height: 3.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
+  height: 2rem;
+  border: none;
 }
 
 .search-form-control .form-control:focus {
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.fa-search {
+  font-size: 16px;
+  padding-top: 8px;
+  color: grey;
 }
