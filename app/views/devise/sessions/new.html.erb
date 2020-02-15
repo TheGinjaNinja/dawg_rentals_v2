@@ -16,10 +16,16 @@
 
         <div class="form-actions" style="margin-top: 15px">
           <%= f.button :submit, "Log in", class: "btn btn-gradient" %>
-
         </div>
+        <div class="form-actions">
         <%= render "devise/shared/links", class: "btn btn-primary" %>
+        </div>
+        <div>
+          <%= link_to "Not signed up yet", new_user_registration_path, class: "btn btn-gradient", style: "margin: 20px 0px; border-radius: 9px;"%>
+        </div>
+
     <% end %>
+
 
   </div>
 </div>
