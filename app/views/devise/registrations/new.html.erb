@@ -1,4 +1,4 @@
-<div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1563237739-e433cbb3fd8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);">
+<div class="banner-new" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1563237739-e433cbb3fd8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);">
   <div class="container" style="width: 600px">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -12,10 +12,6 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "name" }%>
-        <%= f.input :telephone,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "telephone" }%>
         <%= f.input :bio,
                     required: true,
                     autofocus: true,
@@ -29,8 +25,8 @@
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :photo, as: :file %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
+      <div class="form-actions" style="margin-top: 10px;">
+        <%= f.button :submit, "Sign up", class: "btn btn-gradient" %>
       </div>
     <% end %>
   </div>
