@@ -1,0 +1,9 @@
+
+<% if dog.photo.attached? %>
+  <div class="map-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photo.key, height: 100, width: 100 %>); width: 100%; height: 100%">
+<% else %>
+  <div class="map-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/800x600/?dog/<%= rand(500) %>);">
+<% end %>
+  <h2><%= link_to dog.name, dog_path(dog), class: "text" %></h2>
+  </div>
+
