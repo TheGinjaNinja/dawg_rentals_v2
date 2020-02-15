@@ -1,6 +1,6 @@
 <div class="container" style="margin-bottom: 50px">
 
-  <h3 class="mb-3 mt-3">Hi <%= @user.name %>, here are your bookings</h3>
+  <h3 class="mb-3 mt-3" style="font-family: Pacifico, cursive;">Hi <%= @user.name %>, here are your bookings:</h3>
 
   <div class="dog-cards">
     <% @user.bookings.each do |booking| %>
@@ -15,13 +15,13 @@
   </div>
 
   <%= link_to dogs_path do %>
-      <button type="button" class="btn btn-primary"> Make another booking </button>
+      <button type="button" class="btn btn-primary" style="margin: 20px 0px; border-radius: 9px;"> Make another booking </button>
     <% end %>
 
   <hr>
 
   <!-- My dogs, including edit and remove -->
-  <h3 class="mb-3 mt-3"> And <%= @user.name %>, here are your dogs </h3>
+  <h3 class="mb-3 mt-3" style="font-family: Pacifico"> And <%= @user.name %>, here are your dogs: </h3>
 
   <div class="dog-cards">
     <% @user.dogs.reverse.each do |dog| %>
@@ -38,20 +38,20 @@
 
 
     <%= link_to new_dog_path do %>
-      <button type="button" class="btn btn-primary">List a new dog</button>
+      <button type="button" class="btn btn-primary" style="margin: 20px 0px; border-radius: 9px;">List a new dog</button>
     <% end %>
 
   <hr>
 
-  <h3 class="mb-3 mt-3"> And finally <%= @user.name %>, here are your details </h3>
+  <h3 class="mb-3 mt-3" style="font-family: Pacifico"> And finally <%= @user.name %>, here are your details: </h3>
 
-  <p>  name: <%=  @user.name %></p>
-  <p>  email: <%= @user.email %> <p>
+  <p>  Name: <%=  @user.name %></p>
+  <p>  Email: <%= @user.email %> <p>
   <p>  Phone number: <%= @user.telephone %> </p>
   <p>  Bio: <%= @user.bio %> </p>
 
   <%= link_to edit_user_registration_path do %>
-      <button type="button" class="btn btn-primary">Edit Your Details </button>
+      <button type="button" class="btn btn-primary" style="margin: 20px 0px; border-radius: 9px;">Edit Your Details </button>
     <% end %>
 
 
