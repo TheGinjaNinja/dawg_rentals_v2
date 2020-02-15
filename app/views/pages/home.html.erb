@@ -15,7 +15,7 @@
         <div class= "container-fluid">
           <div class= "row">
             <h1>
-              <a href="" class="typewrite" data-period="2000" style= 'color:white' data-type='["Search for your new best friend"]'>
+              <a href="/dogs" class="typewrite" id="moving-text" data-period="2000" style= 'color:white' data-type='["Search for your new best friend"]'>
                 <span class="wrap"></span>
               </a>
             </h1>
@@ -27,7 +27,23 @@
     </div>
   </div>
 </div>
+ <!-- test -->
 
+  <div class="row justify-content-center p-5">
+
+ <div class="button-container col-xs-12 col-sm-4 col-sm-offet 3" style= 'padding-top: 10px;'>
+        <%= simple_form_for :search, url: dogs_path, method: :get do |f| %>
+          <div class="search-form-control form-group" style= 'outline: none;'>
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search Dawgs..." />
+          </div>
+        <% end %>
+        <div>
+          <i class="fas fa-search" style='font-size: 20px;'></i>
+        </div>
+      </div>
+  </div>
 <div class="jumbotron jumbotron-fluid">
     <%= video_tag "homepage-dog.mp4",autoplay: true, loop: true, muted: 'muted', :controls => false %>
 </div>
+
+
