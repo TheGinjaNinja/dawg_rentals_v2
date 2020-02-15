@@ -1,12 +1,17 @@
-<div class="container">
-  <h1 style="color: black">Your dog's details:</h1>
-
-  <%= simple_form_for @dog, url: dogs_path, method: :post do |f| %>
-    <%= f.input :name, label: "Your dog's name" %>
-    <%= f.input :breed, label: "Select the breed", collection: Dog::CATEGORIES %>
-    <%= f.input :bio, label: "Tell us something more about your dog" %>
-    <%= f.input :location %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+<div class="container col-xs-12 col-sm-4 col-sm-offet 3">
+  <h1 style="color: black; font-family: Pacifico, cursive; padding-bottom: 50px;">Your dog's details:</h1>
+    <div class = "form-container" >
+       <%= simple_form_for @dog, url: dogs_path, method: :post do |f| %>
+       <%= f.input :name, label: "Your dog's name" %>
+       <%= f.input :breed, label: "Select the breed", collection: Dog::CATEGORIES %>
+       <%= f.input :bio, label: "Tell us something more about your dog" %>
+       <%= f.input :location %>
+       <%= f.input :photo, as: :file %>
+          <div class= "submit-btn" >
+            <%= f.button :submit, class: "btn btn-primary", style: "margin: 20px 0px; border-radius: 9px;" %>
+          </div>
+   <% end %>
+  </div>
 </div>
+
+
