@@ -1,0 +1,16 @@
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 22px;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: var(--searchbox-height);
+  opacity: 0.9;
+  position: relative;
+  transition: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 300px;
+}
+

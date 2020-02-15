@@ -1,13 +1,17 @@
-<div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
-  <div class = "container">
-    <div class= "form-wrapper" style="width: 500px; padding: 50px; margin: 0 auto;">
-      <%= simple_form_for [@dog, @booking] do |f| %>
-      <h1 class= "title" style= "color: white; ">Hang out with <%= @dog.name%>!</h1>
-      <%= f.input :booked_from, label: "Start date", as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :booked_until, label: "End date", as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit "Book Now", class: "btn-danger btn-lg" %>
-    <% end %>
-  </div>
+<div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @dog.photo.key%>)">
+  <div class="container">
+    <div class= "title">
+      <div class= "form-wrapper" style="width: 500px; padding: 50px; margin: 0 auto;">
+        <%= simple_form_for [@dog, @booking] do |f| %>
+        <h1> Hang out with <%= @dog.name%></h1>
+        <%= f.input :booked_from, label: "Start date", as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :booked_until, label: "End date", as: :string, required: false, input_html: {class: "datepicker"} %>
+        <div class="book">
+        <%= f.submit "Book Now", class: "btn btn-gradient" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
