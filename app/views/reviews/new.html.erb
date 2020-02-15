@@ -3,21 +3,21 @@
 <% else %>
   <div class="profile_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
 <% end %>
-<h1 class="text-center"> Post a review for <%= @dog.name %> </h1>
 
-<div class="container">
+
+
+
+<div class="container container col-xs-12 col-sm-4 col-sm-offet 3">
   <div clas="row">
-    <div class="col-xs-12 col-sm-offset-3">
 
+     <h1 class="text-center" style="font-family: Pacifico, cursive; padding-bottom: 40px";> Post a review for <%= @dog.name %> </h1>
         <%= simple_form_for [@dog, @review] do |f| %>
-        <%= f.input :comment, placeholder: "Good/Bad tell us about your rental" %>
+        <%= f.input :comment, placeholder: "Tell us about your experience" %>
         <%= f.input :rating, placeholder: "From 1-5" %>
-        <%= f.submit  "post review", class: "btn btn-primary" %>
+        <%= f.submit  "Post Review", class: "btn btn-primary", style: "margin: 20px 0px; border-radius: 9px"; %>
 
-      <% end %>
-
-
-
-    </div>
+    <% end %>
   </div>
 </div>
+
+
